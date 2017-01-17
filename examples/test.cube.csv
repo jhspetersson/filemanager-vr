@@ -1,0 +1,28 @@
+Product,City,Year,Sales
+Foo,Moscow,2010,24500
+Foo,Moscow,2011,24700
+Foo,Moscow,2012,25800
+Foo,StPetersburg,2010,13500
+Foo,StPetersburg,2011,7000
+Foo,StPetersburg,2012,5800
+Foo,Tula,2010,400
+Foo,Tula,2011,300
+Foo,Tula,2012,120
+Bar,Moscow,2010,11700
+Bar,Moscow,2011,14400
+Bar,Moscow,2012,13800
+Bar,StPetersburg,2010,3560
+Bar,StPetersburg,2011,8100
+Bar,StPetersburg,2012,4800
+Bar,Tula,2010,320
+Bar,Tula,2011,31000
+Bar,Tula,2012,220
+Some product,Moscow,2010,31700
+Some product,Moscow,2011,34200
+Some product,Moscow,2012,33800
+Some product,StPetersburg,2010,556
+Some product,StPetersburg,2011,580
+Some product,StPetersburg,2012,580
+Some product,Tula,2010,820
+Some product,Tula,2011,840
+Some product,Tula,2012,872
