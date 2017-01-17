@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="/js/aframe-master.js"></script>
+        <script src="/js/aframe-sun-sky.min.js"></script>
+        <script src="/js/aframe-teleport-controls.js"></script>
+        <script src="/js/aframe-bmfont-text-component.js"></script>
+        <script src="/js/aframe-physics-system.min.js"></script>
+        <script src="/js/aframe-physics-collision-filter.js"></script>
+        <script src="/js/aframe-physics-sleepy.js"></script>
+        <script src="/js/aframe-extras.js"></script>
+        <script src="/js/super-hands.min.js"></script>
+        <script src="/js/aframe-vive-cursor-component.js"></script>
+        <script src="/js/aframe-asset-on-demand-component.min.js"></script>
+        <script src="/js/jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+        <a-scene vr-mode-ui physics="gravity: 0">
+        <a-assets></a-assets>
+            <a-sun-sky material="shader: sunSky; sunPosition: -5.5 5.5 -1; luminance: 0.35; turbidity: 1.21; reileigh: 0.7"></a-sun-sky>
+            <a-entity id="user">
+                <a-entity id="camera" camera="userHeight: 1.6;" look-controls>
+                    <a-plane id="message" color="#ff9966" width="2" height="1" position="0 0 -2.5" visible="false">
+                        <a-entity id="message-text" bmfont-text="text: Error; width: 400; align: center; fnt: /fonts/DejaVu-sdf.fnt; fntImage: /fonts/DejaVu-sdf.png" position="-1 -0.09 0.1"></a-entity>
+                    </a-plane>
+                </a-entity>
+
+                <a-entity vive-controls="hand: left" teleport-controls="startEvent: down; endEvent: up; button: trackpad; collisionEntity: #floor" super-hands _physics-collider sphere-collider="objects: .grabbable" grab static-body></a-entity>
+                <a-entity vive-controls="hand: right" vive-cursor="objects: .clickable" super-hands _physics-collider sphere-collider="objects: .grabbable" grab static-body></a-entity>
+            </a-entity>
+
+            <a-grid src="/img/grid.png"></a-grid>
+        </a-scene>
+        <script src="/js/fm.js"></script>
+    </body>
+</html>
