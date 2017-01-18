@@ -51,6 +51,29 @@ AFRAME.registerComponent('selectable-file', {
     }
 });
 
+AFRAME.registerComponent('transient-file', {
+    init : function () {
+        var $this = $(this.el);
+        var oldPosition = $this.attr('position');
+
+        $this.addClass('transient');
+        $this
+            .on('refresh', function () {
+                $this.remove();
+            })
+            .on('grab-end', function () {
+                $this.removeClass('transient')
+
+                var newPosition = $(this).attr('position');
+
+                console.log('old pos: ');
+                console.log(oldPosition);
+                console.log('new pos: ');
+                console.log(newPosition);
+            })
+    }
+});
+
 AFRAME.registerComponent('drop-location', {
     init: function () {
         var el = this.el;
@@ -96,7 +119,7 @@ function listFiles(root) {
             } else {
                 currentDir = root;
 
-                $('.file').remove();
+                $('.transient').trigger('refresh');
 
                 placeFiles(data.data);
             }
@@ -173,7 +196,7 @@ function placeFiles (data) {
             'data-path' : path,
             'data-size' : data[i].size,
             'data-level' : y
-
+            ,'transient-file' : ''
             ,
             'dynamic-body' : '',
             'collision-filter' : 'collidesWith: none',
@@ -294,7 +317,10 @@ $(document).on('gripdown', function () {
     if (viewerOpen) {
         $viewer.remove();
     } else {
-        var parentDir = currentDir.substring(0, currentDir.lastIndexOf('\\') || currentDir.lastIndexOf('/'));
+        var parentDir = '';
+        if (!currentDir.match(/^[a-z]:\\$/i)) {
+            parentDir = currentDir.substring(0, currentDir.lastIndexOf('\\') || currentDir.lastIndexOf('/'));
+        }
 
         listFiles(parentDir);
     }
