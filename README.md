@@ -1,6 +1,10 @@
 # File Manager VR
 File manager with A-Frame UI and Jetty backend. Works with FF nightly build and HTC Vive.
 
+![](https://github.com/jhspetersson/filemanager-vr/blob/master/screenshots/2.png)
+![](https://github.com/jhspetersson/filemanager-vr/blob/master/screenshots/4.png)
+![](https://github.com/jhspetersson/filemanager-vr/blob/master/screenshots/6.png)
+
 ## Idea
 
 This project is an attempt to build a more or less universal VR environment or shell for browsing tree-style data (like file systems with files and folders) and running applications which could be downloaded and executed separately but in one uniform interactive 3D space. These applications could exchange visual data with each other and are subject to various manipulations.
@@ -35,8 +39,11 @@ This app consists of two parts: frontend built with A-Frame framework and backen
 ## Installation and running
 
 Install [Java 8](https://www.java.com)
+
 Download [Firefox nightly build](https://nightly.mozilla.org/)
+
 Enable OpenVR support in FF nightly: https://blog.mozvr.com/experimental-htc-vive-support-in-firefox-nightly/
+
 Run jar-file either by doubleclicking or from command line:
 
 > java -jar filemanager-vr.jar
