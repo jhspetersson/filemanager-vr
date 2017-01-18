@@ -23,9 +23,10 @@ Current state is nearly a draft, but quite functional, and actually is used by m
 
 ## Controls
 
-* select and click to open directory or file
+* select and click with trigger to open directory or file
 * grab a file and put to directory box, so you move a real file to new destination directory
 * rotate and resize files, directories, and OLAP cubes
+* grip button to move up
 
 ## Technical description
 
