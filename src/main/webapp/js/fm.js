@@ -11,6 +11,8 @@ var x = 0;
 var y = 1;
 var z = 0;
 
+var currentDir;
+
 function run () {
     if (!loaded) {
         loaded = true;
@@ -92,6 +94,8 @@ function listFiles(root) {
             if (data.error) {
                 errorMessage(data.error);
             } else {
+                currentDir = root;
+
                 $('.file').remove();
 
                 placeFiles(data.data);
@@ -201,7 +205,7 @@ function placeFiles (data) {
 }
 
 function getColor (fileName) {
-    if (fileName.indexOf(".cube.csv")) {
+    if (fileName.indexOf(".cube.csv") !== -1) {
         return '#66ccff';
     }
 
@@ -290,8 +294,6 @@ $(document).on('gripdown', function () {
     if (viewerOpen) {
         $viewer.remove();
     } else {
-        var path = $('.file').data('path');
-        var currentDir = path.substring(0, path.lastIndexOf('\\') || path.lastIndexOf('/'));
         var parentDir = currentDir.substring(0, currentDir.lastIndexOf('\\') || currentDir.lastIndexOf('/'));
 
         listFiles(parentDir);

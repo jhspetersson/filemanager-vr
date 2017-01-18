@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <build>
-        <finalName>filename-vr</finalName>
+        <finalName>filemanager-vr</finalName>
         <resources>
             <resource>
                 <targetPath>webapp</targetPath>
