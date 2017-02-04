@@ -1,6 +1,8 @@
 # File Manager VR
 File manager with A-Frame UI and Jetty backend. Works with FF nightly build and HTC Vive.
 
+[LIVE DEMO](http://95.213.194.70/filemanager/)
+
 Like this app? [Rate it here!](http://www.virtuleap.com/apps/details/ci)
 
 ![](https://github.com/jhspetersson/filemanager-vr/blob/master/screenshots/2.png)
