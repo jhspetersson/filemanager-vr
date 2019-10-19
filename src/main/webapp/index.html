@@ -23,8 +23,8 @@
                     </a-plane>
                 </a-entity>
 
-                <a-entity vive-controls="hand: left" teleport-controls="startEvent: down; endEvent: up; button: trackpad; collisionEntity: #floor" super-hands _physics-collider sphere-collider="objects: .grabbable" grab static-body></a-entity>
-                <a-entity vive-controls="hand: right" vive-cursor="objects: .clickable" super-hands _physics-collider sphere-collider="objects: .grabbable" grab static-body></a-entity>
+                <a-entity vive-controls="hand: left" oculus-touch-controls="hand: left" teleport-controls="startEvent: down; endEvent: up; button: trackpad; collisionEntity: #floor" super-hands _physics-collider sphere-collider="objects: .grabbable" grab static-body></a-entity>
+                <a-entity vive-controls="hand: right" oculus-touch-controls="hand: right" vive-cursor="objects: .clickable" super-hands _physics-collider sphere-collider="objects: .grabbable" grab static-body></a-entity>
             </a-entity>
 
             <a-grid src="/img/grid.png"></a-grid>
